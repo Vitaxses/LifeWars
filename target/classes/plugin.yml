@@ -1,0 +1,44 @@
+name: LifeWars
+version: '1.0'
+main: com.vitaxses.lifesteal.LifeWars
+api-version: '1.20'
+authors: [Vitaxses]
+description: lifewars plugin :) (lavet af vitaxses)
+commands:
+  editconfig:
+    description: edit configuration with commands, (Messages not included).
+    usage: /config <configvaluename> <true | false>
+    permission: lifewars.EditConfig.use
+  sethealth:
+    description: set a players health.
+    usage: /sethealth <player> <value>
+    permission: lifewars.sethealth.use
+  reloadconfig:
+    description: reloads config!
+    usage: /reloadconfig
+    permission: lifewars.reloadconfig.use
+  withdraw:
+    description: withdraw a heart!
+    usage: /withdraw <number>
+    permission: lifewars.withdraw.use
+  eliminate:
+    description: bans a player1
+    usage: /eliminate <player>
+    permission: lifewars.eliminate.use
+  adminrevive:
+    description: revives a player!
+    usage: /adminrevive <player>
+    permission: lifewars.adminrevive.use
+permissions:
+  lifewars.reloadconfig.use:
+    default: op
+  lifewars.withdraw.use:
+    default: true
+  lifewars.eliminate.use:
+    default: op
+  lifewars.adminrevive.use:
+    default: op
+  lifewars.sethealth.use:
+    default: op
+  lifewars.EditConfig.use:
+    default: op
