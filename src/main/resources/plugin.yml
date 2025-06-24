@@ -1,9 +1,9 @@
 name: LifeWars
-version: '${project.version}'
-main: com.vitaxses.lifesteal.LifeWars
-api-version: '1.20'
-authors: [Vitaxses]
-description: lifewars plugin :) (lavet af vitaxses)
+version: '1.0'
+main: me.vitaxses.lifeWars.LifeWars
+api-version: '1.21'
+authors: [ Vitaxses ]
+description: Lifesteal plugins :) (Made by Vitaxses)
 commands:
   editconfig:
     description: edit configuration with commands, (Messages not included).
@@ -22,7 +22,7 @@ commands:
     usage: /withdraw <number>
     permission: lifewars.withdraw.use
   eliminate:
-    description: bans a player1
+    description: bans a player
     usage: /eliminate <player>
     permission: lifewars.eliminate.use
   adminrevive:

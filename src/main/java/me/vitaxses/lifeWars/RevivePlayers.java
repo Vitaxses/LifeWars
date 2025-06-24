@@ -1,4 +1,4 @@
-package com.vitaxses.lifesteal;
+package me.vitaxses.lifeWars;
 
 import org.bukkit.*;
 import org.bukkit.entity.Player;
@@ -7,6 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+
 import java.util.Arrays;
 
 public class RevivePlayers implements Listener {

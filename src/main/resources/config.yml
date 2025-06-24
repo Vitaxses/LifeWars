@@ -36,7 +36,7 @@ ReviveItemLore: 'Rename this book with the player(s) name you want to Revive'
 
 # ==Message(s)==
 
-YouDontHaveEnoughHearts: 'You dont have enough Hearts to withdraw'
+YouDontHaveEnoughHearts: 'You don't have enough Hearts to withdraw'
 
 DisabledInConfigMsg: 'This is disabled in the config!'
 
