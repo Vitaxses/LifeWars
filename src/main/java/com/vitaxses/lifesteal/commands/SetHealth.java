@@ -1,4 +1,4 @@
-package com.vitaxses.lifesteal;
+package com.vitaxses.lifesteal.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

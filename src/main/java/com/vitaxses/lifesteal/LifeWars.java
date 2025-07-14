@@ -1,5 +1,6 @@
 package com.vitaxses.lifesteal;
 
+import com.vitaxses.lifesteal.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
@@ -54,6 +55,7 @@ public final class LifeWars extends JavaPlugin {
     public void onEnable() {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+        Instance = this;
 
         bannedPlayers = new File(getDataFolder(), "BannedPlayers.txt");
         if (!bannedPlayers.exists()) {

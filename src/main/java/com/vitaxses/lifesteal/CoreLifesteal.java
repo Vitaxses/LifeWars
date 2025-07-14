@@ -32,7 +32,7 @@ public class CoreLifesteal implements Listener {
             Player killer = player.getKiller();
 
             if (killer != null) {
-                double originalHealthKiller = killer.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue();
+                double originalHealthKiller = killer.getAttribute(Attribute.MAX_HEALTH).getBaseValue();
                 double newHealthKiller = originalHealthKiller + 2.0;
 
                 if (newHealthKiller > 40) {
@@ -43,7 +43,7 @@ public class CoreLifesteal implements Listener {
                 setPlayerMaxHealth(killer, newHealthKiller);
             }
 
-            double originalHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue();
+            double originalHealth = player.getAttribute(Attribute.MAX_HEALTH).getBaseValue();
             double newHealth = originalHealth - 2.0;
 
             if (newHealth <= 1) {
@@ -55,25 +55,26 @@ public class CoreLifesteal implements Listener {
         }
 
     }
-        private void givePlayerHeart (Player player){
-            ItemStack heart = new ItemStack(Material.FERMENTED_SPIDER_EYE);
-            ItemMeta heartMeta = heart.getItemMeta();
-            heartMeta.setDisplayName(ChatColor.BOLD + main.getConfig().getString("HeartName"));
-            heartMeta.setLore(Collections.singletonList(ChatColor.WHITE + main.getConfig().getString("HeartLore")));
-            heart.setItemMeta(heartMeta);
-            player.getInventory().addItem(heart);
-        }
 
-        private void setPlayerMaxHealth(Player player,double health){
-            player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(health);
-        }
+    private void givePlayerHeart (Player player){
+        ItemStack heart = new ItemStack(Material.FERMENTED_SPIDER_EYE);
+        ItemMeta heartMeta = heart.getItemMeta();
+        heartMeta.setDisplayName(ChatColor.BOLD + main.getConfig().getString("HeartName"));
+        heartMeta.setLore(Collections.singletonList(ChatColor.WHITE + main.getConfig().getString("HeartLore")));
+        heart.setItemMeta(heartMeta);
+        player.getInventory().addItem(heart);
+    }
 
-        private void handlePlayerDeath(Player player){
-            int reviveMaxHealth = main.getConfig().getInt("ReviveHealth");
-            player.getInventory().clear();
-            player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(reviveMaxHealth);
-            player.banPlayer(ChatColor.RED + main.getConfig().getString("EliminatedBanMsg"), ChatColor.DARK_RED +  main.getConfig().getString("EliminatedBanMsgAfter1"));
-        }
+    private void setPlayerMaxHealth(Player player,double health){
+        player.getAttribute(Attribute.MAX_HEALTH).setBaseValue(health);
+    }
+
+    private void handlePlayerDeath(Player player){
+        int reviveMaxHealth = main.getConfig().getInt("ReviveHealth");
+        player.getInventory().clear();
+        player.getAttribute(Attribute.MAX_HEALTH).setBaseValue(reviveMaxHealth);
+        player.banPlayer(ChatColor.RED + main.getConfig().getString("EliminatedBanMsg"), ChatColor.DARK_RED +  main.getConfig().getString("EliminatedBanMsgAfter1"));
+    }
 
 
 
@@ -82,14 +83,13 @@ public class CoreLifesteal implements Listener {
         shouldMinus = true;
         if (main.getConfig().getBoolean("Use/EquipHearts")) {
             Player player = event.getPlayer();
-            ItemStack Nothing = new ItemStack(Material.AIR);
 
             Action action = event.getAction();
             if (action == Action.RIGHT_CLICK_BLOCK || action == Action.RIGHT_CLICK_AIR) {
                 if (player.getInventory().getItemInMainHand().getType() == Material.FERMENTED_SPIDER_EYE) {
                     ItemStack item = new ItemStack(player.getInventory().getItemInMainHand());
                     if (item.getItemMeta().getDisplayName().equals(ChatColor.BOLD + main.getConfig().getString("HeartName"))) {
-                        double killerMaxHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue();
+                        double killerMaxHealth = player.getAttribute(Attribute.MAX_HEALTH).getBaseValue();
                         double newKillerMaxHealth = killerMaxHealth + 2;
 
                         int maxHealthCap = main.getConfig().getInt("MaxHealthPoints");
@@ -104,7 +104,7 @@ public class CoreLifesteal implements Listener {
 
 
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(newKillerMaxHealth);
+                        player.getAttribute(Attribute.MAX_HEALTH).setBaseValue(newKillerMaxHealth);
                         if (shouldMinus) {
                             int minusOne = player.getInventory().getItemInHand().getAmount();
 

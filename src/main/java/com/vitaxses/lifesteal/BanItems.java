@@ -107,7 +107,6 @@ public class BanItems implements Listener {
 
     @EventHandler
     public void onSmithingTableUse(InventoryClickEvent event) {
-        Player player = (Player) event.getWhoClicked();
         ItemStack currentItem = event.getCurrentItem();
         ItemStack nothing = new ItemStack(Material.AIR);
         if (currentItem != null && !main.getConfig().getBoolean("Netherite")) {

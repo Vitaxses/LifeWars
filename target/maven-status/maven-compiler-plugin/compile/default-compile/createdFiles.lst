@@ -1,0 +1,12 @@
+com/vitaxses/lifesteal/CraftingRecipes.class
+com/vitaxses/lifesteal/commands/SetHealth.class
+com/vitaxses/lifesteal/commands/Eliminate.class
+com/vitaxses/lifesteal/commands/RLConfig.class
+com/vitaxses/lifesteal/BanItems.class
+com/vitaxses/lifesteal/commands/AdminRevive.class
+com/vitaxses/lifesteal/commands/EditConfigCm.class
+com/vitaxses/lifesteal/commands/Withdraw.class
+com/vitaxses/lifesteal/RevivePlayers.class
+com/vitaxses/lifesteal/editconfigTab.class
+com/vitaxses/lifesteal/LifeWars.class
+com/vitaxses/lifesteal/CoreLifesteal.class

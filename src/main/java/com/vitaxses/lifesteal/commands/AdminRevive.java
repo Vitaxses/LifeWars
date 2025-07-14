@@ -1,5 +1,6 @@
-package com.vitaxses.lifesteal;
+package com.vitaxses.lifesteal.commands;
 
+import com.vitaxses.lifesteal.LifeWars;
 import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

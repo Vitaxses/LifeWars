@@ -1,5 +1,6 @@
-package com.vitaxses.lifesteal;
+package com.vitaxses.lifesteal.commands;
 
+import com.vitaxses.lifesteal.LifeWars;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
