@@ -1,5 +1,6 @@
 package com.vitaxses.lifesteal;
 
+import com.vitaxses.lifesteal.banItems.CombatManager;
 import com.vitaxses.lifesteal.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,6 +15,8 @@ public final class LifeWars extends JavaPlugin {
     private static LifeWars Instance;
 
     private static File bannedPlayers;
+    public CombatManager combatManager;
+
     public List<String> getBannedPlayers(boolean toLower) {
         List<String> s = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(bannedPlayers))) {
@@ -69,11 +72,12 @@ public final class LifeWars extends JavaPlugin {
 
 
         getCommand("reloadconfig").setExecutor(new RLConfig(this));
+        combatManager = new CombatManager();
         if (getConfig().getBoolean("Enabled")) {
             CraftingRecipes customRecipeHandler = new CraftingRecipes(this);
             customRecipeHandler.registerRecipe();
             getServer().getPluginManager().registerEvents(new CoreLifesteal(this), this);
-            getServer().getPluginManager().registerEvents(new BanItems(this), this);
+            combatManager.setupListeners(this);
             getServer().getPluginManager().registerEvents(new RevivePlayers(this), this);
             getCommand("withdraw").setExecutor(new Withdraw(this));
             getCommand("eliminate").setExecutor(new Eliminate());

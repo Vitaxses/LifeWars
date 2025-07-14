@@ -59,16 +59,15 @@ CustomRecipes: true  # Enables the crafting recipes.
 HeartRecipe: true  # Enable crafting of hearts (DO NOT enabled if the CustomRecipes is false).
 ReviveRecipe: true  # Enable crafting of revival item (DO NOT enabled if the CustomRecipes is false).
 
-# ==BanItem(s)==
-
-TNTminecart: true  # Allow the use of TNT mine-carts.
-EndCrystal: true  # Allow the use of End Crystals.
-RespawnAnchors: true  # Allow the use of Respawn Anchors.
-Over32GoldenApples: true  # Allow players to have more than 32 golden apples.
-Trident: true  # Allow the use/pickup of tridents.
-Netherite: true  # Allow the use of Netherite items.
-Totems: true  # Allow Totem of Undying.
-NoThornsEnchantMent: false  # Disable the Thorns enchantment.
+# ==LIFEWARS S5 Edition==
+CombatTimer: 400 # this is ticks so 20 ticks is 1 second.
+NetheriteArmorModule: true # if true it prevents the use of netherite armor.
+NetheriteMeleeModule: true # if true it prevents the use of netherite axe and sword.
+TridentModule: true # if true it prevents the use of tridents while in combat.
+Lvl2PotsModule: true # if true it prevents the use of strength 2 and speed 2 while in combat.
+IronPieceMinModule: true # if true it forces players to only have max 3 diamond pieces.
+ElytraUseModule: true # if true it prevents the use of elytra in combat.
+PearlUseModule: true # if true it prevents the use of pearls in combat.
 
 # ==Should-Not-Be-Edited==
 CoreLifestealMechanic: true
